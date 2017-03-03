@@ -1,6 +1,7 @@
 package com.niitbejai.electroworldFE.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,5 +27,33 @@ public class PageController {
 		mv.addObject("greeting", "Hello World from Electro World !!");
 		return mv;
 	}
+
+	/* Query string handling is demonstrated using the below two methods. Commenting this out as we will not 
+	 * need it for the rest of the programs
+	 * 
+	@RequestMapping(value= "/test")
+	public ModelAndView test(@RequestParam(value="greeting", required=false )String userGreeting)
+	{
+		if(usergreeting == null)
+		{
+			userGreeting = "James Gosling !!";
+		}
+		ModelAndView mv = new ModelAndView("page"); // later this will be created as master page
+		mv.addObject("greeting", "Hello World from Electro World !!" + " Message from " + userGreeting);
+		return mv;
+	}
+	
+	@RequestMapping(value= "/test/{usergreeting}")
+	public ModelAndView test(@PathVariable("usergreeting")String usergreeting)
+	{
+		if(usergreeting == null)
+		{
+			usergreeting = "James Gosling !!";
+		}
+		ModelAndView mv = new ModelAndView("page"); // later this will be created as master page
+		mv.addObject("greeting", "Hello World from Electro World !!" + " Message from " + usergreeting);
+		return mv;
+	}
+	*/
 
 }
