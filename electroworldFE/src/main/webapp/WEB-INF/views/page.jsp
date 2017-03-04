@@ -69,11 +69,18 @@
 			</c:if>
 			<!--  End of C-if -->
 
-			<!--  Main part of the page from this file  to be displayed when about is clicked -->
+			<!--  Main part of the page from this file  to be displayed when contactus is clicked -->
 			<c:if test="${userClickedContact == true }">
 				<%@ include file="contact.jsp"%>
 			</c:if>
 			<!--  End of C-if -->
+
+			<!--  Main part of the page from this file  to be displayed when view products or category (products) is clicked -->
+			<c:if test="${userClickedAllProducts == true or userClickedCatgoryProducts == true}">
+				<%@ include file="listProducts.jsp"%>
+			</c:if>
+			<!--  End of C-if -->
+
 
 		<!--  End of page cpntent-->
 

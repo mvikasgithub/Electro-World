@@ -16,6 +16,13 @@
 			<spring.version>4.3.6.RELEASE</spring.version>
 		</properties> 
 		-->
+		
+		<!--  Linking Backed Project -->
+		<dependency>
+			<groupId>com.niitbejai</groupId>
+			<artifactId>electroworldBE</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- Spring -->
 		<dependency>

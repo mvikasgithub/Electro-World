@@ -1,9 +1,15 @@
 package com.niitbejai.electroworldFE.controller;
 
+import javax.faces.event.SystemEventListener;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.niitbejai.electroworldBE.dao.CategoryDAO;
+import com.niitbejai.electroworldBE.dto.Category;
 
 /*
  * The @Controller annotation indicates that a particular class serves the role of a controller. 
@@ -17,6 +23,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller //Tells the 
 public class PageController {
 	
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
+	
 	/*
 	 * If / or /home or /index is used for this website then map it to this method 
 	 */
@@ -25,6 +35,11 @@ public class PageController {
 	{
 		ModelAndView mv = new ModelAndView("page"); // later this will be created as master page
 		mv.addObject("title", "Home");
+		
+		// passing the list of categories
+		mv.addObject("categories", categoryDAO.list());
+		
+		
 		mv.addObject("userClickedHome", true);
 		return mv;
 	}
@@ -44,6 +59,50 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page"); // later this will be created as master page
 		mv.addObject("title", "Contact us");
 		mv.addObject("userClickedContact", true);
+		return mv;
+	}
+	
+	/*
+	 * For view products 
+	 */
+	@RequestMapping(value= "/show/all/products")
+	public ModelAndView showAllProducts()
+	{
+		ModelAndView mv = new ModelAndView("page"); // later this will be created as master page
+		mv.addObject("title", "All Products");
+		
+		// passing the list of categories
+		mv.addObject("categories", categoryDAO.list());
+		
+		
+		mv.addObject("userClickedAllProducts", true);
+		return mv;
+	}
+	
+	/*
+	 * For displaying particular category products
+	 */
+	@RequestMapping(value= "/show/category/{id}/products")
+	public ModelAndView showCategoryProducts(@PathVariable("id") int id)
+	{
+		ModelAndView mv = new ModelAndView("page"); // later this will be created as master page
+		
+		//categoryDAO to fetch a single category
+		
+		Category category = null;
+		category = categoryDAO.get(id);
+		
+		mv.addObject("title", category.getName());
+		//System.out.println(category.getName());
+		
+		// passing the list of categories
+		mv.addObject("categories", categoryDAO.list());
+
+		// passing the single category
+		mv.addObject("category", category);
+		
+		
+		mv.addObject("userClickedCatgoryProducts", true);
 		return mv;
 	}
 
