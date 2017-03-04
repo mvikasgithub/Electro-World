@@ -1,0 +1,23 @@
+driver:org.h2.Driver
+jdbc url:jdbc:h2:tcp://localhost/~/electroworld
+username:sa
+password:sa
+
+Queries
+=======
+CREATE TABLE category
+(
+	id IDENTITY,
+	name VARCHAR(50),
+	description VARCHAR(255),
+	image_url VARCHAR(50),
+	active BOOLEAN,
+
+	CONSTRAINT pk_category_id PRIMARY KEY (id)
+);
+
+select * from category;
+
+update category set active=true where id=1; // for updating the "active" file of a row whose id is 1
+
+drop table category; // for dropping the table
