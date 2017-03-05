@@ -16,7 +16,7 @@ public class Category {
 
 	
 	/*
-	 * private fileds for category
+	 * private fields for category
 	 */
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

@@ -43,6 +43,15 @@
 			<version>5.2.8.Final</version>
 		</dependency>
 		
+		<!--  Hibernate Dispatcher -->
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.3.4.Final</version>
+		</dependency>
+		
+		
 		<!-- Spring ORM -->
 		<dependency>
 			<groupId>org.springframework</groupId>

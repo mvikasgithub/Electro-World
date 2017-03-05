@@ -20,7 +20,7 @@ import com.niitbejai.electroworldBE.dto.Category;
  * conjunction with the dispatcher   
  */
 
-@Controller //Tells the 
+@Controller 
 public class PageController {
 	
 	@Autowired
@@ -105,6 +105,23 @@ public class PageController {
 		mv.addObject("userClickedCatgoryProducts", true);
 		return mv;
 	}
+	
+	/*
+	 * For Admin
+	 
+	@RequestMapping(value= "/admin")
+	public ModelAndView admin()
+	{
+		ModelAndView mv = new ModelAndView("admin"); // later this will be created as master page
+		mv.addObject("title", "Admin");
+		
+		// passing the list of categories
+		//mv.addObject("categories", categoryDAO.list());
+		
+		
+		mv.addObject("userClickedAdmin", true);
+		return mv;
+	}*/	
 
 	/* Query string handling is demonstrated using the below two methods. Commenting this out as we will not 
 	 * need it for the rest of the programs
@@ -133,5 +150,7 @@ public class PageController {
 		return mv;
 	}
 	*/
+	
+	
 
 }

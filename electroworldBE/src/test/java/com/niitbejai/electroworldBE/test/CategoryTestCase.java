@@ -77,7 +77,7 @@ public class CategoryTestCase
 		assertEquals("Successfully fetched the list of categories from the table !", 1, categoryDAO.list().size());
 	}
 */
-	
+/*	
 	@Test
 	public void testCRUDCategory()
 	{
@@ -124,5 +124,5 @@ public class CategoryTestCase
 		assertEquals("Successfully fetched the list of categories from the table !", 3, categoryDAO.list().size());
 		
 	}
-	
+*/	
 }
