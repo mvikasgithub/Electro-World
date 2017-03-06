@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <spring:url var="css" value="/resources/css" />
 <spring:url var="js" value="/resources/js" />
@@ -37,11 +38,22 @@
 <!--  More custom CSS  -->
 <link href="${css}/styles.css" rel="stylesheet">
 
+<!--  Datatables bootstrap CSS  -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
 <!-- jQuery -->
 <script src="${js}/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="${js}/bootstrap.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="${js}/jquery.dataTables.js"></script>
+
+<!-- Datatable Core JavaScript -->
+<script src="${js}/dataTables.bootstrap.js"></script>
+
+
 
 <!-- My own JavaScript -->
 <script src="${js}/myapp.js"></script>
@@ -78,10 +90,16 @@
 	<!--  Main part of the page from this file  to be displayed when view products or category (products) is clicked -->
 	<c:if
 		test="${userClickedAllProducts == true or userClickedCatgoryProducts == true}">
-		<%@ include file="listProducts.jsp"%>
+		<%@ include file="user_listProducts.jsp"%>
 	</c:if>
 	<!--  End of C-if -->
 
+	<!--  Main part of the page from this file  to be displayed when (Admin) Product management page has been clicked-->
+	<c:if
+		test="${userClickedAdminProductManagement == true}">
+		<%@ include file="productmanagement.jsp"%>
+	</c:if>
+	<!--  End of C-if -->
 
 	<!--  End of page cpntent-->
 

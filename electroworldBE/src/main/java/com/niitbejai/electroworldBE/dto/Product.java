@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -26,28 +27,31 @@ public class Product {
 	@Size(min=3, max=10) 
 	private String code; // code can be alphanumeric
 	
+	@NotNull
+	private int categoryid;
+	
 	@NotEmpty
 	private String quantity;
 	@NotEmpty
 	private String suppliercode;
+	@NotEmpty
 	private String imageURL;
-	@NotEmpty
 	private boolean active = true;
-	@NotEmpty
 	private boolean inStock = false;
 	
 	// will be useful in debugging
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", code=" + code + ", quantity=" + quantity + ", suppliercode=" + suppliercode
-				+ ", imageURL=" + imageURL + ", active=" + active + ", inStock=" + inStock + "]";
-	}
+		return "Product [id=" + id + ", code=" + code + ", categoryid=" + categoryid + ", quantity=" + quantity
+				+ ", suppliercode=" + suppliercode + ", imageURL=" + imageURL + ", active=" + active + ", inStock="
+				+ inStock + "]";
 	
 	
 	/*
-	 * Setters and Getters
+	 * Getters and Setters
 	 */
 	
+	}
 	public int getId() {
 		return id;
 	}
@@ -60,10 +64,16 @@ public class Product {
 	public void setCode(String code) {
 		this.code = code;
 	}
+	public int getCategoryid() {
+		return categoryid;
+	}
+	public void setCategoryid(int categoryid) {
+		this.categoryid = categoryid;
+	}
 	public String getQuantity() {
 		return quantity;
 	}
-	public void setQunatity(String quantity) {
+	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
 	public String getSuppliercode() {
@@ -90,6 +100,8 @@ public class Product {
 	public void setInStock(boolean inStock) {
 		this.inStock = inStock;
 	}
+	
+	
 	
 
 }

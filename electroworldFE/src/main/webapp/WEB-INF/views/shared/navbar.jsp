@@ -26,6 +26,9 @@
 					<li id="listProducts">
 						<a href="${contextRoot}/show/all/products">View Products</a>
 					</li>
+					<li id="ProductMgmt">
+						<a href="${contextRoot}/admin/show/product/management">Admin</a>
+					</li>
 				</ul>
 				<!--  Sign up and Login glyphs will be right aligned hence navbar-right -->
 				<ul class="nav navbar-nav navbar-right">
