@@ -72,9 +72,10 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	@Override
-	public boolean delete(Product product) {
+	public boolean delete(int id) {
 		// instead of deleting what is usually done is to set the flag as false so that the fetch command 
 		// ignores it. Makes it easy when the same item has to be added again
+		Product product = this.get(id); 
 		product.setActive(false);
 		
 		try

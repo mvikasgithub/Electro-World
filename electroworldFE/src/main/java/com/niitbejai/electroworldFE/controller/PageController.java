@@ -1,9 +1,12 @@
 package com.niitbejai.electroworldFE.controller;
 
+import java.util.List;
+
 import javax.faces.event.SystemEventListener;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -105,6 +108,20 @@ public class PageController {
 		mv.addObject("userClickedCatgoryProducts", true);
 		return mv;
 	}
+	
+	/*
+	 * Get list of all categories from DB so that it is available in the FE form (while adding product) 
+	 */
+/*	
+	@ModelAttribute("categories")
+	public List<String> initializeCategories() 
+	{
+		
+		List<String> categories = categoryDAO.list();
+		categories.add("");
+ 		return categories;
+	}	
+*/	
 	
 	/*
 	 * For Admin

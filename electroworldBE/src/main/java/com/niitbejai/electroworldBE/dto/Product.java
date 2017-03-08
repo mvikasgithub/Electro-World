@@ -4,10 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 /*
  * Here there is an option to specify the entity name. If we are not specifying the entity name, then
@@ -38,6 +40,8 @@ public class Product {
 	private String imageURL;
 	private boolean active = true;
 	private boolean inStock = false;
+	@Transient
+	private MultipartFile imagempfile;
 	
 	// will be useful in debugging
 	@Override
@@ -52,54 +56,79 @@ public class Product {
 	 */
 	
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getCode() {
 		return code;
 	}
+
 	public void setCode(String code) {
 		this.code = code;
 	}
+
 	public int getCategoryid() {
 		return categoryid;
 	}
+
 	public void setCategoryid(int categoryid) {
 		this.categoryid = categoryid;
 	}
+
 	public String getQuantity() {
 		return quantity;
 	}
+
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
+
 	public String getSuppliercode() {
 		return suppliercode;
 	}
+
 	public void setSuppliercode(String suppliercode) {
 		this.suppliercode = suppliercode;
 	}
+
 	public String getImageURL() {
 		return imageURL;
 	}
+
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
 	}
+
 	public boolean isActive() {
 		return active;
 	}
+
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
 	public boolean isInStock() {
 		return inStock;
 	}
+
 	public void setInStock(boolean inStock) {
 		this.inStock = inStock;
 	}
+
+	public MultipartFile getImagempfile() {
+		return imagempfile;
+	}
+
+	public void setImagempfile(MultipartFile imagempfile) {
+		this.imagempfile = imagempfile;
+	}
+
 	
 	
 	

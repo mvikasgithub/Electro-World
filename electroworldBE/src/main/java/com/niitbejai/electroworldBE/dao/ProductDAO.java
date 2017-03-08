@@ -13,6 +13,6 @@ public interface ProductDAO {
 	//Methods for JUnit
 	boolean add(Product category);
 	boolean update(Product category);
-	boolean delete(Product category);	
+	boolean delete(int id);	
 	
 }

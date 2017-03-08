@@ -14,6 +14,10 @@ $(function() {
 		$('#home').addClass('active');
 		break;
 
+	case 'Admin - Product Management':
+		$('#ProductMgmt').addClass('active');
+		break;
+
 	default:
 		$('#listProducts').addClass('active');
 		$('#a_' + menu).addClass('active');

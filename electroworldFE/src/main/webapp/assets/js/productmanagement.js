@@ -18,9 +18,9 @@ $(function(){
 			    	  }	
 			    	},
 		        {
-		            "mData": null,
+		            "mData": 'id',
 		            "bSortable": false,
-		           "mRender": function (o) { return '<a href="index.jsp" class="btn btn-primary active" role="button">Delete</a>'; }
+		           "mRender": function (data,type,row) { return '<a href="/electroworldFE/admin/delete/'+data+'/product" class="btn btn-primary active" role="button">Delete</a>'; }
 		        }    	] 
 } );
 
