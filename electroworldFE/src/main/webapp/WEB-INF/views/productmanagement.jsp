@@ -5,8 +5,7 @@
 		var path = window.location.href;
 		if (path.indexOf('edit') > -1) {
 			$('#updatemodal').modal('show');
-		}
-		else if(path.indexOf('add') > -1){
+		} else if (path.indexOf('add') > -1) {
 			$('#updatemodal').modal('show');
 		}
 
@@ -38,6 +37,17 @@
 				<!--  End of col-lg-12 -->
 			</div>
 			<!--  End of row -->
+			<c:if test="${addProductFailed == true}">
+				<div class="row">
+					<div class="container">
+						<div class="alert alert-warning">
+							<p>Error while Adding prouct. Please try again !!</p>
+							<%-- Can we launch the model directly from here (in case of error)  --%>
+						</div>
+					</div>
+
+				</div>
+			</c:if>
 
 			<%-- insert code for Table here --%>
 
@@ -48,12 +58,14 @@
 				<div class="container">
 					<h2>Products</h2>
 					<p>List of All products:</p>
-						<div class="row">
-							<div class="container">
-								<ul>
-								<a href="/electroworldFE/admin/add/product" class="btn btn-primary active pull-right" role="button">Add Product</a>
-								</ul>
-							</div>
+					<div class="row">
+						<div class="container">
+							<ul>
+								<a href="/electroworldFE/admin/add/product"
+									class="btn btn-primary active pull-right" role="button">Add
+									Product</a>
+							</ul>
+						</div>
 					</div>
 					<div class=row>
 						<div class="container"></div>

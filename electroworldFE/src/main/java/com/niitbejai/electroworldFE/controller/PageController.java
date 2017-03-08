@@ -65,6 +65,15 @@ public class PageController {
 		return mv;
 	}
 	
+	@RequestMapping(value= "/registration")
+	public ModelAndView registration()
+	{
+		ModelAndView mv = new ModelAndView("registration"); // later this will be created as master page
+		mv.addObject("title", "Registration");
+		mv.addObject("userClickedRegistration", true);
+		return mv;
+	}	
+	
 	/*
 	 * For view products 
 	 */

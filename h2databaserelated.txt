@@ -30,9 +30,27 @@ CREATE TABLE product
 	CONSTRAINT pk_product_id PRIMARY KEY (id)
 );
 
+CREATE TABLE USER
+(
+	id IDENTITY,
+	fname VARCHAR(25),
+	sname VARCHAR(25),
+	email VARCHAR(25),
+	billingaddress VARCHAR(50),
+	city VARCHAR(25),
+	state VARCHAR(25),
+	zip VARCHAR(10),
+	phoneno VARCHAR(15),
+	active BOOLEAN,
+	
+	constraint pk_user_id PRIMARY KEY (id)
+
+);
+
+
 INSERT INTO <TABLE> VALUES (1, 1, 'TV001', 100, 'XYZ123', 'TV001.jpg', true, true); 
 DROP TABLE test;
-
+DELETE FROM CUSTOMERS WHERE ID = 6;
 UPDATE <TABLE> SET ADDRESS = 'Pune' WHERE ID = 6;
 
 select * from category;
@@ -40,4 +58,7 @@ select * from category;
 update category set active=true where id=1; // for updating the "active" file of a row whose id is 1
 
 drop table category; // for dropping the table
+
+Path where the workspace (runtime) will be stored on the hdd
+E:\Vikas\Programming\Eclipse Workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\electroworldFE\resources\images
 

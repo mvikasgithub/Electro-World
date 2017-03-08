@@ -100,6 +100,10 @@
 		<%@ include file="productmanagement.jsp"%>
 	</c:if>
 	<!--  End of C-if -->
+	<c:if
+		test="${addProductFailed == true}">
+		<%@ include file="productmanagement.jsp"%>
+	</c:if>
 
 	<!--  End of page cpntent-->
 

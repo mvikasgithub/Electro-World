@@ -128,6 +128,7 @@ public class Product {
 	public void setImagempfile(MultipartFile imagempfile) {
 		this.imagempfile = imagempfile;
 	}
+	
 
 	
 	

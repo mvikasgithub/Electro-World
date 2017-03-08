@@ -11,8 +11,8 @@ public interface ProductDAO {
 	List<Product> list();
 	
 	//Methods for JUnit
-	boolean add(Product category);
-	boolean update(Product category);
+	boolean add(Product product);
+	boolean update(Product product);
 	boolean delete(int id);	
 	
 }

@@ -107,7 +107,10 @@ public class AdminController {
 		mv.addObject("title", "Admin - Product Management");
 
 		mv.addObject("userClickedAdminProductManagement", true);
-		mv.addObject("product", productDAO.get(id));
+		Product product = productDAO.get(id);
+		//product.setImagempfile(product.getCode() + ".jpg");
+		mv.addObject("product", product);
+		
 		return mv;
 	}
 
@@ -124,7 +127,8 @@ public class AdminController {
 		if(result.hasErrors()) 
 		{
 			System.out.println("Result has errors  !!!!");
-			model.addAttribute("userClickedAdminProductManagement", true);
+			model.addAttribute("title", "Admin - Product Management");
+			model.addAttribute("addProductFailed", true);
 	        return "page";
 		}		
 		

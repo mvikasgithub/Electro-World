@@ -8,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niitbejai.electroworldBE.dao.CategoryDAO;
 import com.niitbejai.electroworldBE.dto.Category;
+import com.niitbejai.electroworldBE.dto.User;
 
 public class CategoryTestCase 
 {
@@ -16,7 +17,9 @@ public class CategoryTestCase
 	
 	private static CategoryDAO categoryDAO;
 	
+
 	private Category category;
+
 	
 	@BeforeClass
 	public static void init()
@@ -29,6 +32,8 @@ public class CategoryTestCase
 		  
 		
 	}
+	
+
 /*	
 	@Test
 	public void testAddCategory()

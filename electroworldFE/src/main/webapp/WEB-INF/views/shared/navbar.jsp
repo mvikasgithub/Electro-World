@@ -32,8 +32,8 @@
 				</ul>
 				<!--  Sign up and Login glyphs will be right aligned hence navbar-right -->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/furnitureshop/register"><span
-							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="${contextRoot}/registration">
+					<span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 					<li><a href="/furnitureshop/login"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
