@@ -90,6 +90,10 @@
 								placeholder="Enter Email Address Here.." class="form-control">
 						</div>
 						<div class="form-group">
+							<label>Password</label> <input type="password"
+								placeholder="Enter password here..." class="form-control">
+						</div>
+						<div class="form-group">
 							<label>Billing Address</label>
 							<textarea placeholder="Enter Address Here.." rows="3"
 								class="form-control"></textarea>

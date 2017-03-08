@@ -12,6 +12,17 @@
 	});
 </script>
 
+<c:if test="${addProductFailed == true}">
+	<script>
+		$(function() {
+			$('#updatemodal').modal('show');
+		}
+
+		)
+	</script>
+</c:if>
+
+
 <div class="container">
 	<div class="row">
 
@@ -37,17 +48,6 @@
 				<!--  End of col-lg-12 -->
 			</div>
 			<!--  End of row -->
-			<c:if test="${addProductFailed == true}">
-				<div class="row">
-					<div class="container">
-						<div class="alert alert-warning">
-							<p>Error while Adding prouct. Please try again !!</p>
-							<%-- Can we launch the model directly from here (in case of error)  --%>
-						</div>
-					</div>
-
-				</div>
-			</c:if>
 
 			<%-- insert code for Table here --%>
 
