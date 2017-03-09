@@ -90,7 +90,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Email Address</label> 
+								<label>Email Address (wii be your username)</label> 
 								<form:input type="text" path="email" placeholder="Enter Email Address Here.." class="form-control" disabled="true"/>
 							</div>
 							<div class="form-group">

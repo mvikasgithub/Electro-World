@@ -92,7 +92,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Email Address</label>
+								<label>Email Address (will be your username)</label>
 								<form:input type="text" path="email"
 									placeholder="Enter Email Address Here.." class="form-control" />
 							</div>

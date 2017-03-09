@@ -13,8 +13,6 @@
     
     ">
 
-	<context:component-scan base-package="com.niitbejai.electroworldFE.controller" />
-	<context:component-scan base-package="com.niitbejai.electroworldBE" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -59,9 +57,6 @@
 	</bean>
 
 
-<mvc:resources location="/assets/" mapping="/resources/**" />
-<!-- Loading static resources -->
-<mvc:annotation-driven />
 
 </beans>
  
