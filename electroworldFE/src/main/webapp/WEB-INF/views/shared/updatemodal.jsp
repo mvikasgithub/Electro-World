@@ -1,7 +1,8 @@
 
 <!-- Add Modal -->
-<form:form method="POST" modelAttribute="product" enctype="multipart/form-data"
-	class="form-horizontal" action="${contextRoot}/admin/save/product">
+<form:form method="POST" modelAttribute="product"
+	enctype="multipart/form-data" class="form-horizontal"
+	action="${contextRoot}/admin/save/product">
 
 	<div class="modal fade" id="updatemodal" role="dialog">
 		<div class="modal-dialog">
@@ -10,7 +11,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Product Details: </h4>
+					<h4 class="modal-title">Product Details:</h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
@@ -29,6 +30,7 @@
 							<form:errors path="code" class="help-inline" />
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="ProductQuantity">Quantity:</label>
 						<form:input type="text" path="quantity" class="form-control"
@@ -49,7 +51,7 @@
 						<label for="ProductImageURL">Image URL:</label>
 						<form:input type="file" path="imagempfile" class="form-control"
 							id="ProductImageURL" />
-<!-- 						<div class="has-error">
+						<!-- 						<div class="has-error">
 							<form:errors path="imageURL" class="help-inline" />
 						</div> -->
 					</div>

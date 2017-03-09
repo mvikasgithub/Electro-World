@@ -44,33 +44,33 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean add(User user) 
+	public String add(User user) 
 	{
 		try
 		{
 			// persist this category in the database
 			sessionFactory.getCurrentSession().persist(user);
-			return true;	
+			return "true";	
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-			return false;
+			return "false";
 		}	}
 
 	@Override
-	public boolean update(User user) 
+	public String update(User user) 
 	{
 		try
 		{
 			// update this category in the database
 			sessionFactory.getCurrentSession().update(user);
-			return true;	
+			return "true";	
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-			return false;
+			return "false";
 		}		
 	}
 

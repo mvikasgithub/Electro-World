@@ -28,23 +28,24 @@ public class UserTestCase
 		  
 	}	
 
-/*	
+/*
 	@Test
 	public void testAddUser()
 	{
 		user = new User();
 		
 		
-		// first user
-		user.setFname("Sachin");
-		user.setSname("Tendulkar");
-		user.setEmail("sachin.t@sansad.nic.in");
-		user.setPassword("123");
-		user.setBillingaddress("19-A, Perry Cross Road, Bandra (West)");
-		user.setCity("Mumbai");
-		user.setState("Maharashtra");
-		user.setZip("400050");
-		user.setPhoneno("123456789");
+//		// first user
+//		user.setFname("Sachin");
+//		user.setSname("Tendulkar");
+//		user.setEmail("sachin.t@sansad.nic.in");
+//		user.setPassword("123");
+//		user.setBillingaddress("19-A, Perry Cross Road, Bandra (West)");
+//		user.setCity("Mumbai");
+//		user.setState("Maharashtra");
+//		user.setZip("400050");
+//		user.setPhoneno("123456789");
+//		user.setRole("customer");
 		
 		
 		
@@ -58,6 +59,7 @@ public class UserTestCase
 //		user.setState("Maharashtra");
 //		user.setZip("400049");
 //		user.setPhoneno("123456789");
+//		user.setRole("customer");
 		
 		//third user
 //		user.setFname("Lata");
@@ -69,14 +71,14 @@ public class UserTestCase
 //		user.setState("Maharashtra");
 //		user.setZip("400032");
 //		user.setPhoneno("123456789");
+//		user.setRole("customer");		
 		
 		
-		
-		assertEquals("Successfully added a category inside the table !", true, userDAO.add(user));
+		assertEquals("Successfully added a category inside the table !", "true", userDAO.add(user));
 	}		
 
 
-*/
+
 /*	@Test
 	public void testAddUser()
 	{
@@ -113,11 +115,11 @@ public class UserTestCase
 		assertEquals("Successfully updated a single category in the table !", true, userDAO.update(user));
 	}	*/
 	
-	@Test
+/*	@Test
 	public void testDeleteUser()
 	{
 		//user = userDAO.get(8);
 		
 		assertEquals("Successfully deleted a single category in the table !", true, userDAO.delete(8));
-	} 	
+	}*/ 	
 }

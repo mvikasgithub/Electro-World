@@ -11,7 +11,7 @@ public interface UserDAO {
 	List<User> list();
 	
 	//Methods for JUnit
-	boolean add(User user);
-	boolean update(User user);
+	String add(User user);
+	String update(User user);
 	boolean delete(int id);	
 }

@@ -81,67 +81,53 @@
 						<div class="col-sm-12">
 							<div class="row">
 								<div class="col-sm-6 form-group">
-									<label>First Name</label>
-									<form:input type="text" path="fname"
-										placeholder="Enter First Name Here.." class="form-control" />
+									<label>First Name</label> 
+									<form:input type="text" path="fname" placeholder="Enter First Name Here.." class="form-control" disabled="true"/>
 								</div>
 								<div class="col-sm-6 form-group">
-									<label>Last Name</label>
-									<form:input type="text" path="sname"
-										placeholder="Enter Last Name Here.." class="form-control" />
+									<label>Last Name</label> 
+									<form:input type="text" path="sname" placeholder="Enter Last Name Here.." class="form-control" disabled="true"/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Email Address</label>
-								<form:input type="text" path="email"
-									placeholder="Enter Email Address Here.." class="form-control" />
+								<label>Email Address</label> 
+								<form:input type="text" path="email" placeholder="Enter Email Address Here.." class="form-control" disabled="true"/>
 							</div>
 							<div class="form-group">
-								<label>Password</label>
-								<form:input type="password" path="password"
-									placeholder="Enter password here..." class="form-control" />
+								<label>Password</label> 
+								<form:input type="password" path="password" placeholder="Enter password here..." class="form-control" disabled="true"/>
 							</div>
 							<div class="form-group">
 								<label>Billing Address</label>
-								<form:textarea path="billingaddress"
-									placeholder="Enter Address Here.." rows="3"
-									class="form-control" />
+								<form:textarea path="billingaddress" placeholder="Enter Address Here.." rows="3" class="form-control"  disabled="true"/> 
 							</div>
 							<div class="row">
 								<div class="col-sm-4 form-group">
-									<label>City</label>
-									<form:input type="text" path="city"
-										placeholder="Enter City Name Here.." class="form-control" />
+									<label>City</label> 
+									<form:input type="text"	path="city" placeholder="Enter City Name Here.." class="form-control" disabled="true"/>
 								</div>
 								<div class="col-sm-4 form-group">
-									<label>State</label>
-									<form:input type="text" path="state"
-										placeholder="Enter State Name Here.." class="form-control" />
+									<label>State</label> 
+									<form:input type="text" path="state" placeholder="Enter State Name Here.." class="form-control" disabled="true"/>
 								</div>
 								<div class="col-sm-4 form-group">
-									<label>Zip</label>
-									<form:input type="text" path="zip"
-										placeholder="Enter Zip Code Here.." class="form-control" />
+									<label>Zip</label> 
+									<form:input type="text" path="zip" placeholder="Enter Zip Code Here.." class="form-control" disabled="true"/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Phone Number</label>
-								<form:input type="text" path="phoneno"
-									placeholder="Enter Phone Number Here.." class="form-control" />
+								<label>Phone Number</label> 
+								<form:input type="text" path="phoneno"	placeholder="Enter Phone Number Here.." class="form-control" disabled="true"/>
 							</div>
 							<div class="form-group">
-								<form:label path="role" for="role">Type of User:</form:label>
-								<form:select path="role" id="role" class="form-control input-sm"
-									width="300px">
-									<form:option value="CUSTOMER">User</form:option>
-									<form:option value="SUPPLIER">Supplier</form:option>
-								</form:select>
-								<form:errors path="role" class="help-inline" />
+								<label>Type of User:</label>
+								<form:input type="text" path="role"	placeholder="Enter Phone Number Here.." class="form-control" disabled="true"/>
 							</div>
+							
 							<!-- for triggering webflow events using form submission, the eventId to be triggered is given in "name" attribute as:
-					-->
-							<input type="submit" name="_eventId_submit"
-								class="btn btn-default" role="button" value="Submit" />
+					-->							
+							<input type="submit" name= "_eventId_edit" class="btn btn-default" role="button" value="Edit" />
+							<input type="submit" name= "_eventId_submit" class="btn btn-default" role="button" value="Submit" />
 						</div>
 					</form>
 				</div>

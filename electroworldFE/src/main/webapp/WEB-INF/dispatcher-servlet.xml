@@ -1,5 +1,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:webflow="http://www.springframework.org/schema/webflow-config"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -7,6 +8,8 @@
     http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/webflow-config
+    http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd
     
     ">
 
@@ -22,12 +25,43 @@
 	</bean>
 
 	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
-	
-	<mvc:resources location="/assets/" mapping="/resources/**" />
-	<!-- Loading static resources -->
-	<mvc:annotation-driven />
+	<!-- WebFlow Configuration -->
+
+	<webflow:flow-executor id="flowExecutor" />
+
+	<webflow:flow-registry id="flowRegistry"
+		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
+		<!-- here the id is mapped to invoke this flow -->
+		<webflow:flow-location id="registration" path="/registrationFlow.xml" />
+	</webflow:flow-registry>
+
+	<webflow:flow-builder-services id="flowBuilderServices"
+		view-factory-creator="viewFactoryCreator"/>
+
+	<bean id="viewFactoryCreator"
+		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<property name="viewResolvers">
+			<list>
+				<ref bean="viewResolver" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	</bean>
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="0" />
+	</bean>
+
+
+<mvc:resources location="/assets/" mapping="/resources/**" />
+<!-- Loading static resources -->
+<mvc:annotation-driven />
 
 </beans>
  

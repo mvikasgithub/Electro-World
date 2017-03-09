@@ -33,10 +33,12 @@ CREATE TABLE product
 CREATE TABLE USER
 (
 	id IDENTITY,
-	fname VARCHAR(25),
-	sname VARCHAR(25),
-	email VARCHAR(25),
-	billingaddress VARCHAR(50),
+	password VARCHAR(50),
+	role VARCHAR(25),
+	fname VARCHAR(50),
+	sname VARCHAR(50),
+	email VARCHAR(50),
+	billingaddress VARCHAR(100),
 	city VARCHAR(25),
 	state VARCHAR(25),
 	zip VARCHAR(10),

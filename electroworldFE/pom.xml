@@ -87,6 +87,21 @@
 			<version>2.4.4.RELEASE</version>
 		</dependency>
 
+		<!-- Spring Security Config -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+
+		<!-- Spring Security Taglibs -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+
+
 
 	</dependencies>
 	<build>

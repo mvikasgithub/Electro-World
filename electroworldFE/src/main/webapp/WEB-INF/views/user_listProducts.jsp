@@ -20,7 +20,7 @@
 
 						<!--  Adding breadcrumb component -->
 						<ol class="breadcrumb">
-							<li><a href={contextRoot}/home">Home</a></li>
+							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">All Products</li>
 						</ol>
 
@@ -31,7 +31,7 @@
 
 						<!--  Adding breadcrumb component -->
 						<ol class="breadcrumb">
-							<li><a href={contextRoot}/home">Home</a></li>
+							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Category</li>
 							<li class="active">${category.name}</li>
 						</ol>
