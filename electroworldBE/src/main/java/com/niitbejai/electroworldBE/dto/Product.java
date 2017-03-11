@@ -42,21 +42,30 @@ public class Product {
 	private boolean inStock = false;
 	@Transient
 	private MultipartFile imagempfile;
+	@NotEmpty
+	private String name;
+	@NotEmpty
+	private String description;
+	@NotEmpty
+	private int Price;
 	
-	// will be useful in debugging
+	/*
+	 * To strong function
+	 */
+	
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", code=" + code + ", categoryid=" + categoryid + ", quantity=" + quantity
 				+ ", suppliercode=" + suppliercode + ", imageURL=" + imageURL + ", active=" + active + ", inStock="
-				+ inStock + "]";
-	
-	
+				+ inStock + ", imagempfile=" + imagempfile + ", name=" + name + ", description=" + description
+				+ ", Price=" + Price + "]";
+	}
+
 	/*
 	 * Getters and Setters
 	 */
 	
-	}
-
+	
 	public int getId() {
 		return id;
 	}
@@ -128,8 +137,31 @@ public class Product {
 	public void setImagempfile(MultipartFile imagempfile) {
 		this.imagempfile = imagempfile;
 	}
-	
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getPrice() {
+		return Price;
+	}
+
+	public void setPrice(int price) {
+		Price = price;
+	}
+	
 	
 	
 	

@@ -27,6 +27,14 @@ public class UserTestCase
 		userDAO = (UserDAO) context.getBean("userDAO");
 		  
 	}	
+	
+	@Test
+	public void testGetUserByUsername()
+	{
+		user = userDAO.getUserBuUsername("sachin.t@sansad.nic.in");
+		
+		assertEquals("Successfully fetched a single category from the table !", "Sachin", user.getFname());
+	}
 
 /*
 	@Test

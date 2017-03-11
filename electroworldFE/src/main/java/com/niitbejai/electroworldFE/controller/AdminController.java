@@ -42,11 +42,11 @@ public class AdminController {
 	/*
 	 * For getting data in JSON format to be displayed in data tables
 	 */
-	@RequestMapping("/all/data")
+/*	@RequestMapping("/all/data")
 	@ResponseBody
 	public List<Product> getAllProducts() {
 		return productDAO.list();
-	}
+	}*/
 
 	/*
 	 * For Admin

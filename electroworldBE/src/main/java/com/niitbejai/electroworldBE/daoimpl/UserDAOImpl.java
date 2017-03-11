@@ -26,6 +26,20 @@ public class UserDAOImpl implements UserDAO {
 		return sessionFactory.getCurrentSession().get(User.class, Integer.valueOf(id));
 	
 	}
+	
+	@Override
+	public User getUserBuUsername(String username) 
+	{
+		
+		String selectActiveCategory = "FROM User WHERE email = :parameter";
+		
+		Query<User> query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory, User.class);
+		
+		query.setParameter("parameter", username);
+		
+		return query.getSingleResult();				
+	}
+
 
 	@Override
 	public List<User> list() 
@@ -56,7 +70,8 @@ public class UserDAOImpl implements UserDAO {
 		{
 			ex.printStackTrace();
 			return "false";
-		}	}
+		}	
+	}
 
 	@Override
 	public String update(User user) 
@@ -92,6 +107,11 @@ public class UserDAOImpl implements UserDAO {
 		{
 			ex.printStackTrace();
 			return false;
-		}		}
+		}		
+		
+	}
+
+
+
 
 }

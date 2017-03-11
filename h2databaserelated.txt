@@ -26,6 +26,9 @@ CREATE TABLE product
 	imageURL VARCHAR(255),
 	active BOOLEAN,
 	instock BOOLEAN,
+	name VARCHAR (50),
+	description VARCHAR(100),
+	price INTEGER,
 	
 	CONSTRAINT pk_product_id PRIMARY KEY (id)
 );
@@ -49,11 +52,36 @@ CREATE TABLE USER
 
 );
 
+CREATE TABLE CART
+(
+	id IDENTITY,
+	userid INTEGER,
+	totalitems INTEGER,
+	totalvalueofitems INTEGER,
+	
+	constraint pk_cart_id PRIMARY KEY (id)
+);
 
-INSERT INTO <TABLE> VALUES (1, 1, 'TV001', 100, 'XYZ123', 'TV001.jpg', true, true); 
+CREATE TABLE CARTITEMS
+(
+	id IDENTITY,
+	userid INTEGER,
+	cartid INTEGER,
+	productid INTEGER,
+	quantity INTEGER,
+	unitprice INTEGER,
+	totalprice INTEGER,
+	
+	constraint pk_cartitems_id PRIMARY KEY (id)
+);
+
+
+INSERT INTO <TABLE> VALUES (1, 1, 'TV001', 100, 'XYZ123', 'TV001.jpg', true, true, "Sony Bravia", "32 inch flat TV", "42000" ); 
 DROP TABLE test;
 DELETE FROM CUSTOMERS WHERE ID = 6;
 UPDATE <TABLE> SET ADDRESS = 'Pune' WHERE ID = 6;
+
+TRUNCATE TABLE <Table>
 
 select * from category;
 

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niitbejai.electroworldBE.dao.CategoryDAO;
+import com.niitbejai.electroworldBE.dao.ProductDAO;
 import com.niitbejai.electroworldBE.dto.Category;
+import com.niitbejai.electroworldBE.dto.Product;
 
 /*
  * The @Controller annotation indicates that a particular class serves the role of a controller. 
@@ -26,6 +28,9 @@ public class PageController {
 
 	@Autowired
 	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private ProductDAO productDAO;	
 
 	/*
 	 * If / or /home or /index is used for this website then map it to this
@@ -83,6 +88,25 @@ public class PageController {
 		return mv;
 	}
 
+	/*
+	 * For individual products
+	 */
+	@RequestMapping(value = "/show/{id}/product")
+	public ModelAndView showSingleProducts(@PathVariable("id") int id) {
+		ModelAndView mv = new ModelAndView("singleproduct"); 
+
+		Product product = null;
+		product = productDAO.get(id);
+
+		mv.addObject("title", product.getName());
+
+		// passing the single product
+		mv.addObject("product", product);
+
+		mv.addObject("userClickedSingleProduct", true);
+		return mv;
+	}
+	
 	/*
 	 * For view products
 	 */

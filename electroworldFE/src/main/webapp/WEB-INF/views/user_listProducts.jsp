@@ -50,24 +50,20 @@
 					<table class="table table-bordered" id="AllProductsTable">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Code</th>
-								<th>Catergory ID</th>
-								<th>Quantity</th>
-								<th>Supplier Code</th>
-								<th>View</th>
-								<th>Delete</th>
+								<th>NAME</th>
+								<th>IMAGE</th>
+								<th>DESCRIPTION</th>
+								<th>PRICE</th>
+								<th>ADD TO CART</th>
 							</tr>
 						</thead>
 						<tfoot>
 							<tr>
-								<th>ID</th>
-								<th>Code</th>
-								<th>Catergory ID</th>
-								<th>Quantity</th>
-								<th>Supplier Code</th>
-								<th>View</th>
-								<th>Delete</th>
+								<th>NAME</th>
+								<th>IMAGE</th>
+								<th>DESCRIPTION</th>
+								<th>PRICE</th>
+								<th>ADD TO CART</th>
 							</tr>
 						</tfoot>
 					</table>

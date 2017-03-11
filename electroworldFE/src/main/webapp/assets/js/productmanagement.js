@@ -4,7 +4,7 @@ $(function(){
 	
 	$('#ProductManagementTable').DataTable( {
     ajax: {
-        url: '/electroworldFE/admin/all/data',
+        url: '/electroworldFE/all/data',
         dataSrc: ''
     },
    columns: [        
