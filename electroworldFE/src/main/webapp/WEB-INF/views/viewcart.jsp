@@ -53,7 +53,7 @@
 						href="${contextRoot}/customer/checkout/${cartitems.productid}/product"
 						class="btn btn-primary " role=button>CHECKOUT</a></td>
 					<td><a
-						href="${contextRoot}/customer/remove/${cartitems.productid}/product"
+						href="${contextRoot}/customer/delete/${cartitems.productid}/product"
 						class="btn btn-primary btn-danger" role=button>REMOVE FROM
 							CART</a></td>
 				</tr>

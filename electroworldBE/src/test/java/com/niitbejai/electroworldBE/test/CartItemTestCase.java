@@ -30,9 +30,9 @@ public class CartItemTestCase {
 		cartItemDAO = (CartItemDAO) context.getBean("cartItemDAO");
 		cartDAO = (CartDAO) context.getBean("cartDAO");
 	}
-	/*
-	 * @Test public void testAddAndUpdateCartItem() { CartItem cartItem = new
-	 * CartItem(); Cart cart = new Cart();
+/*	
+	 @Test public void testAddAndUpdateCartItem() { CartItem cartItem = new
+	 CartItem(); Cart cart = new Cart();
 	 * 
 	 * // In actual execution will get these values from the front end
 	 * 
@@ -98,7 +98,7 @@ public class CartItemTestCase {
 	 * }
 	 * 
 	 * }
-	 */
+*/	 
 
 	@Test
 	public void testDeleteCartTtem() {
