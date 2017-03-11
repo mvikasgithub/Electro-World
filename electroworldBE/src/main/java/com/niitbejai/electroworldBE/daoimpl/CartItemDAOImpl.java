@@ -62,17 +62,17 @@ public class CartItemDAOImpl implements CartItemDAO
 	}		
 
 	@Override
-	public List<CartItem> list() 
+	public List<CartItem> list(int userid) 
 	{
 		// v v imp here that the "cartitem" is the entity name and not the table name.
 		// In case in the class when using the @Entity annotation is used, if no  name is given
 		// then it default picks the class name as entity name.
 		
-		String selectActiveCategory = "FROM CartItem WHERE active = :active";
+		String selectActiveCategory = "FROM CartItem WHERE userid = :parameter";
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
 		
-		query.setParameter("active", true);
+		query.setParameter("parameter", userid);
 		
 		return query.getResultList();			
 	

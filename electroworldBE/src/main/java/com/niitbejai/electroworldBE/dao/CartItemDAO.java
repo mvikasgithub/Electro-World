@@ -8,7 +8,7 @@ import com.niitbejai.electroworldBE.dto.CartItem;
 public interface CartItemDAO 
 {
 	CartItem get(int id);
-	List<CartItem> list();
+	List<CartItem> list(int userid);
 	
 	//Methods for JUnit
 	boolean add(CartItem cartItem);

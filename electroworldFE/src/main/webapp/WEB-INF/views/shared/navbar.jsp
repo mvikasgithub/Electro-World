@@ -11,7 +11,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="${contextRoot}/home"><img
-					src="${images}/logo.png" alt="Your Logo"></a>
+					src="" alt="Electro World"></a> <%-- ${images}/logo.png --%>
 			</div>
 			<!-- end navbar-header -->
 			<div class="collapse navbar-collapse" id="myNavbar">

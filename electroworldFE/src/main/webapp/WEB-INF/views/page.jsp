@@ -95,15 +95,20 @@
 	<!--  End of C-if -->
 
 	<!--  Main part of the page from this file  to be displayed when (Admin) Product management page has been clicked-->
-	<c:if
-		test="${userClickedAdminProductManagement == true}">
+	<c:if test="${userClickedAdminProductManagement == true}">
 		<%@ include file="productmanagement.jsp"%>
 	</c:if>
 	<!--  End of C-if -->
-	<c:if
-		test="${addProductFailed == true}">
+	<c:if test="${addProductFailed == true}">
 		<%@ include file="productmanagement.jsp"%>
 	</c:if>
+	<%-- End of C -if --%>
+
+	
+	<c:if test="${userClickedViewCart == true}">
+		<%@ include file="viewcart.jsp"%>
+	</c:if>
+	<%-- End of C -if --%>
 
 	<!--  End of page cpntent-->
 

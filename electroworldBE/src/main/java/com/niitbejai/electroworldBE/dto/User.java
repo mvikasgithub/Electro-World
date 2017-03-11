@@ -9,7 +9,9 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.stereotype.Component;
 
+@Component 
 @Entity
 public class User implements Serializable
 {
