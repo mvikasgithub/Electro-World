@@ -13,9 +13,7 @@
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Vew Cart</li>
-
 						</ol>
-
 					</c:if>
 					<!--  End of C:if  -->
 				</div>
@@ -26,40 +24,49 @@
 		<!--  end of col-md-12 -->
 	</div>
 
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Product ID</th>
-				<th>Quantity</th>
-				<th>Price</th>
-				<th>Total Price</th>
-				<th>Viw Details</th>
-				<th>Checkout</th>
-				<th>Remove</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${cartitemlist}" var="cartitems">
-				<tr>
-					<td>${cartitems.productid}</td>
-					<td>${cartitems.quantity}</td>
-					<td>${cartitems.unitprice}</td>
-					<td>${cartitems.totalprice}</td>
-					<td><a
-						href="${contextRoot}/show/${cartitems.productid}/product"
-						class="btn btn-primary " role=button>VIEW DETAILS</a></td>
+	<c:choose>
+		<c:when test="${not empty cartitemlist}">
 
-					<td><a
-						href="${contextRoot}/customer/checkout/${cartitems.productid}/product"
-						class="btn btn-primary " role=button>CHECKOUT</a></td>
-					<td><a
-						href="${contextRoot}/customer/delete/${cartitems.productid}/product"
-						class="btn btn-primary btn-danger" role=button>REMOVE FROM
-							CART</a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Product ID</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Total Price</th>
+						<th>Viw Details</th>
+						<th>Checkout</th>
+						<th>Remove</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${cartitemlist}" var="cartitems">
+						<tr>
+							<td>${cartitems.productid}</td>
+							<td>${cartitems.quantity}</td>
+							<td>&8377 ${cartitems.unitprice}</td>
+							<td>&8377 ${cartitems.totalprice}</td>
+							<td><a
+								href="${contextRoot}/show/${cartitems.productid}/product"
+								class="btn btn-primary " role=button>VIEW DETAILS</a></td>
+
+							<td><a
+								href="${contextRoot}/customer/checkout/${cartitems.productid}/product"
+								class="btn btn-primary " role=button>CHECKOUT</a></td>
+							<td><a
+								href="${contextRoot}/customer/delete/${cartitems.productid}/product"
+								class="btn btn-primary btn-danger" role=button>REMOVE FROM
+									CART</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:when>
+		<c:when	test="${empty cartitemlist}">
+				<center><h2>Cart is empty</h2></center> 
+		</c:when>
+	</c:choose>
+
 </div>
 <%-- end of container --%>
 

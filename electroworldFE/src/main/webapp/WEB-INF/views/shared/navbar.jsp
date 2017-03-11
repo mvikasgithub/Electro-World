@@ -1,4 +1,5 @@
-<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!--  Nav bar for reuse  -->
 <div class=container>
@@ -10,8 +11,9 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="${contextRoot}/home"><img
-					src="" alt="Electro World"></a> <%-- ${images}/logo.png --%>
+				<a class="navbar-brand" href="${contextRoot}/home"><img src=""
+					alt="Electro World"></a>
+				<%-- ${images}/logo.png --%>
 			</div>
 			<!-- end navbar-header -->
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -22,8 +24,12 @@
 							Us</a></li>
 					<li id="listProducts"><a
 						href="${contextRoot}/show/all/products">View Products</a></li>
-					<li id="ProductMgmt"><a
-						href="${contextRoot}/admin/show/product/management">Admin</a></li>
+
+					<%-- Add the code to hide the Admin button --%>
+					<security:authorize access="hasAuthority('ADMIN')">
+						<li id="ProductMgmt"><a
+							href="${contextRoot}/admin/show/product/management">Admin</a></li>
+					</security:authorize>
 				</ul>
 				<!--  Sign up and Login glyphs will be right aligned hence navbar-right -->
 				<ul class="nav navbar-nav navbar-right">
@@ -35,6 +41,9 @@
 					<security:authorize access="isAuthenticated()">
 						<li><a href="${contextRoot}/logout"><span
 								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="${contextRoot}/logout"><span
+								class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+
 						</li>
 					</security:authorize>
 

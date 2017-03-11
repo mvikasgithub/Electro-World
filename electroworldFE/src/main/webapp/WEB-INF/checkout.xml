@@ -6,9 +6,9 @@
 
 	<!-- Executed when webFlow is triggered -->
 	<on-start>
-		<!-- RegisterHandler is java class available through annotated RegisterHandler.java 
+		<!-- CheckoutHandler is java class available through annotated CheckoutHandler.java 
 			class.here we are calling it’s initFlow() method. -->
-		<evaluate expression="registerHandler.initFlow()" result="flowScope.user" />
+		<evaluate expression="checkoutHandler.initFlow()" result="flowScope.order" />
 	</on-start>
 
 	<!-- if not specified the first view state is the starting state -->
