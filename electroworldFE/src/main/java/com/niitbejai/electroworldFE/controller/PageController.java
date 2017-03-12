@@ -1,5 +1,7 @@
 package com.niitbejai.electroworldFE.controller;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -149,6 +151,11 @@ public class PageController {
 		return mv;
 	}
 
+	
+	
+	
+	
+	
 	/*
 	 * Get list of all categories from DB so that it is available in the FE form
 	 * (while adding product)

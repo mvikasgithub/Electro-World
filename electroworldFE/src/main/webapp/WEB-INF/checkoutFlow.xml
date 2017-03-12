@@ -12,30 +12,38 @@
 	</on-start>
 
 	<!-- if not specified the first view state is the starting state -->
-	<view-state id="start" view="registration" model="flowScope.user">
+	<view-state id="start" view="checkout" model="flowScope.order">
 		<transition on="submit" to="validate" />
 	</view-state>
 
 	<action-state id="validate">
-		<evaluate expression="registerHandler.validateDetails(user,messageContext)"></evaluate>
-		<transition on="success" to="confirmRegDetails" />
+		<evaluate expression="checkoutHandler.validateDetails(order,messageContext)"></evaluate>
+		<transition on="success" to="confirmOrderDetails" />
 		<transition on="failure" to="start" />
 	</action-state>
-	
-	<view-state id="confirmRegDetails" view="confirmregdetails" model="flowScope.user">
-		<transition on="edit" to="start" />
-		<transition on="submit" to="saveRegDetails" />
-	</view-state>
-	
-	<action-state id="saveRegDetails">
-		<evaluate expression="registerHandler.addUser(user)"></evaluate>
-		<transition on="true" to="regSuccess" />
-		<transition on="false" to="start" />
-	</action-state>	
-	
 
-	<end-state id="regSuccess" view="registrationSuccess" />
+	<view-state id="confirmOrderDetails" view="confirmorder"
+		model="flowScope.order">
+		<transition on="cancel" to="gotoHome" />
+		<transition on="submit" to="proceedToPaymentDetails" />
+	</view-state>
+
+	<view-state id="proceedToPaymentDetails" view="paymentdetails"
+		model="flowScope.order">
+		<transition on="cancel" to="gotoHome" />
+		<transition on="submit" to="saveorder" />
+	</view-state>
+
+	<action-state id="saveOrder">
+		<evaluate expression="checkoutHandler.addOrderSuccess()"></evaluate>
+		<transition on="true" to="orderSuccess" />
+		<transition on="false" to="orderSuccess" />
+	</action-state>
+
+
+	<end-state id="orderSuccess" view="ordersuccess" />
 	<end-state id="exit" view="regSuccess.jsp" />
+	<end-state id="gotoHome" view="home.jsp" />
 
 	<!-- these events are available in every state -->
 	<global-transitions>

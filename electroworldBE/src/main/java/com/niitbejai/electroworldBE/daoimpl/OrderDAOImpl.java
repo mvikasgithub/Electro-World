@@ -7,7 +7,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.niitbejai.electroworldBE.dao.OrderDAO;
-import com.niitbejai.electroworldBE.dto.CartItem;
 import com.niitbejai.electroworldBE.dto.Order;
 
 public class OrderDAOImpl implements OrderDAO 
@@ -36,7 +35,7 @@ public class OrderDAOImpl implements OrderDAO
 	@Override
 	public List<Order> list(int userid) 
 	{
-		// v v imp here that the "cartitem" is the entity name and not the table name.
+		// v v imp here that the "Order" is the entity name and not the table name.
 		// In case in the class when using the @Entity annotation is used, if no  name is given
 		// then it default picks the class name as entity name.
 		

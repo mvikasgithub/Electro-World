@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niitbejai.electroworldBE.dao.CartDAO;
 import com.niitbejai.electroworldBE.dao.CartItemDAO;
+import com.niitbejai.electroworldBE.dao.OrderDAO;
 import com.niitbejai.electroworldBE.dao.ProductDAO;
 import com.niitbejai.electroworldBE.dao.UserDAO;
 import com.niitbejai.electroworldBE.dto.Cart;
 import com.niitbejai.electroworldBE.dto.CartItem;
+import com.niitbejai.electroworldBE.dto.Order;
 import com.niitbejai.electroworldBE.dto.Product;
 import com.niitbejai.electroworldBE.dto.User;
 
@@ -25,13 +27,20 @@ public class CartController {
 	private ProductDAO productDAO;
 	@Autowired
 	private CartDAO cartDAO;
-	
+		
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	
+	@Autowired
+	private Cart cart;
 
 	@Autowired
 	private User user;
+	
+	@Autowired
+	private Order order;
 
 	@RequestMapping(value = "/customer/viewcart")
 	public String customerviewcart(Principal principal, Model mv) 
@@ -115,6 +124,30 @@ public class CartController {
 		mv.addAttribute("userClickedViewCart", true);
 		return "redirect:/customer/viewcart";
 	}
+	
+	@RequestMapping(value = "/customer/checkout/{productid}/product")
+	public String customercheckoutproduct(@PathVariable("productid") int productid, Principal principal, Model mv) 
+	{
+		System.out.println("Inside customercheckoutproduct method !!!!");
+
+		if (principal != null) 
+		{
+			user = userDAO.getUserBuUsername(principal.getName());
+
+			if (user.getRole().equals("ADMIN"))
+				return "redirect:/admin/show/product/management";
+		}
+		
+		cart = cartDAO.getCartByUserId(user.getId());
+		
+		order.setUserid(user.getId());
+		order.setBillingaddress(user.getBillingaddress());
+		order.setTotalitems(cart.getTotalitems());
+		order.setTotalvalue(cart.getTotalvalueofitems());
+		
+		return "redirect:/checkout"; // to kick start the webform
+	}
+	
 	
 	public void helperDeleteCartItem(CartItem cartItem) 
 	{

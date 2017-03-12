@@ -75,6 +75,16 @@ CREATE TABLE CARTITEMS
 	constraint pk_cartitems_id PRIMARY KEY (id)
 );
 
+CREATE TABLE ORDER
+(
+	id IDENTITY,
+	userid INTEGER,
+	totalitems INTEGER,
+	totalvalue INTEGER,
+	billingaddress VARCHAR(100),
+	shippingaddress VARCHAR(100),
+);
+
 
 INSERT INTO <TABLE> VALUES (1, 1, 'TV001', 100, 'XYZ123', 'TV001.jpg', true, true, "Sony Bravia", "32 inch flat TV", "42000" ); 
 DROP TABLE test;

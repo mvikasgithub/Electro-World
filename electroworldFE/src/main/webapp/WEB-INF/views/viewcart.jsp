@@ -44,8 +44,8 @@
 						<tr>
 							<td>${cartitems.productid}</td>
 							<td>${cartitems.quantity}</td>
-							<td>&8377 ${cartitems.unitprice}</td>
-							<td>&8377 ${cartitems.totalprice}</td>
+							<td>&#8377 ${cartitems.unitprice}</td>
+							<td>&#8377 ${cartitems.totalprice}</td>
 							<td><a
 								href="${contextRoot}/show/${cartitems.productid}/product"
 								class="btn btn-primary " role=button>VIEW DETAILS</a></td>

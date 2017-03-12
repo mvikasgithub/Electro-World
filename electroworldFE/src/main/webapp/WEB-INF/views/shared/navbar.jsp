@@ -41,10 +41,11 @@
 					<security:authorize access="isAuthenticated()">
 						<li><a href="${contextRoot}/logout"><span
 								class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-						<li><a href="${contextRoot}/logout"><span
-								class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
-
-						</li>
+						<security:authorize access="hasAuthority('CUSTOMER')">
+							<li><a href="${contextRoot}/customer/viewcart"><span
+									class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+							</li>
+						</security:authorize>
 					</security:authorize>
 
 					<security:authorize access="isAnonymous()">

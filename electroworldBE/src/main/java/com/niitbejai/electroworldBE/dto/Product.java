@@ -1,5 +1,7 @@
 package com.niitbejai.electroworldBE.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 /*
@@ -16,8 +19,12 @@ import org.springframework.web.multipart.MultipartFile;
  * by default the class name ('Product' in this case ) will be the entity name.
  */
 
+@Component
 @Entity
-public class Product {
+public class Product implements Serializable 
+{
+	
+	private static final long serialVersionUID = 3815550983024238320L;
 	
 	/*
 	 * private fields for category
