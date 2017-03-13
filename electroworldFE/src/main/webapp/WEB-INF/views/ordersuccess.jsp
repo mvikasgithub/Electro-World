@@ -62,21 +62,21 @@
 </head>
 
 <body>
-	<!--  Adding breadcrumb component -->
-	<ol class="breadcrumb">
-		<li><a href="${contextRoot}/home">Home</a></li>
-		<li class="active">Admin</li>
-		<li class="active">All Products</li>
-	</ol>
-	
-	<div class="row">
-		<h1>Congrtulations !! Your order is confirmed.</h1>
-		<hr/>
-		<p>Congratulations !! Your order has been successfully placed. You will receive your order in the next 5 days.
-		
+	<div class="container">
+		<!--  Adding breadcrumb component -->
+		<ol class="breadcrumb">
+			<li><a href="${contextRoot}/home">Home</a></li>
+			<li class="active">Order Confirmation</li>
+		</ol>
+
+		<div class="row">
+			<h1>Congrtulations !! Your order is confirmed.</h1>
+			<hr />
+			<p>Congratulations !! Your order has been successfully placed.
+				You will receive your order in the next 5 days.
+		</div>
+
+
 	</div>
-	
-
-
 </body>
 </html>

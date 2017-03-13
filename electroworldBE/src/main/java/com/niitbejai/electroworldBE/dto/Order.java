@@ -7,7 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component 
@@ -28,14 +30,27 @@ public class Order implements Serializable
 	private int userid;
 	private int totalitems;
 	private int totalvalue;
+	@NotEmpty
 	private String billingaddress;
+	@NotEmpty
 	private String shippingaddress;
+
+	@Transient
+	private boolean sameAsShipping; 
+	
+	
 	
 	
 	/*
 	 * Getters and Setters
 	 */
 	
+	public boolean isSameAsShipping() {
+		return sameAsShipping;
+	}
+	public void setSameAsShipping(boolean sameAsShipping) {
+		this.sameAsShipping = sameAsShipping;
+	}
 	public int getId() {
 		return id;
 	}

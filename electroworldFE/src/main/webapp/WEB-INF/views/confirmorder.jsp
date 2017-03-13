@@ -101,11 +101,6 @@
 									<form:input type="text" path="shippingaddress"
 										class="form-control" disabled="true" />
 								</div>
-								<div class="form-group">
-									<label>Shipping Address: </label>
-									<form:input id="shippingaddress" type="text"
-										path="shippingaddress" class="form-control" disabled="true" />
-								</div>
 							<input type="submit" name= "_eventId_submit" class="btn btn-default" role="button" value="Submit" />
 							<input type="submit" name= "_eventId_edit" class="btn btn-default" role="button" value="Edit" />
 

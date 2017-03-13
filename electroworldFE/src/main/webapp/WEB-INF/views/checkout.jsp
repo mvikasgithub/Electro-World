@@ -61,8 +61,7 @@
 
 </head>
 <body>
-	<form:form method="POST" modelAttribute="order"
-		enctype="multipart/form-data" class="form-horizontal">
+	<form:form method="POST" modelAttribute="order" class="form-horizontal">
 		<div class="container">
 
 			<div class="container">
@@ -70,49 +69,84 @@
 				<div class="col-lg-12 well">
 					<div class="row">
 						<div class="col-sm-12">
-							<form>
-								<div class="form-group">
-									<label>Order ID: </label>
-									<form:input type="text" path="id" class="form-control"
-										disabled="true" />
-								</div>
-								<div class="form-group">
-									<label>User ID: </label>
-									<form:input type="text" path="userid" class="form-control"
-										disabled="true" />
-								</div>
-								<div class="form-group">
-									<label>Total Items: </label>
-									<form:input type="text" path="totalitems" class="form-control"
-										disabled="true" />
-								</div>
-								<div class="form-group">
-									<label>Total Value of Items: </label>
-									<form:input type="text" path="totalvalue" class="form-control"
-										disabled="true" />
-								</div>
-								<div class="form-group">
-									<label>Billing Address: </label>
-									<form:input type="text" path="billingaddress"
-										class="form-control" disabled="true" />
-								</div>
-								<div class="form-group">
-									<label>Shipping Address (same as Billing Address): </label> <input
-										type="checkbox" class="form-control" />
-								</div>
-								<div class="form-group">
-									<label>Shipping Address: </label>
-									<form:input id="shippingaddress" type="text"
-										path="shippingaddress" class="form-control" disabled="true" />
-								</div>
-								<input type="submit" name="_eventId_submit"	class="btn btn-default" role="button" value="Submit" />
-
-							</form>
+							<div class="form-group">
+								<label>Order ID: </label>
+								<form:input type="text" path="id" class="form-control"
+									disabled="true" />
+							</div>
+							<div class="form-group">
+								<label>User ID: </label>
+								<form:input type="text" path="userid" class="form-control"
+									disabled="true" />
+							</div>
+							<div class="form-group">
+								<label>Total Items: </label>
+								<form:input type="text" path="totalitems" class="form-control"
+									disabled="true" />
+							</div>
+							<div class="form-group">
+								<label>Total Value of Items: </label>
+								<form:input type="text" path="totalvalue" class="form-control"
+									disabled="true" />
+							</div>
+							<div class="form-group">
+								<label>Billing Address: </label>
+								<form:input type="text" path="billingaddress"
+									class="form-control" disabled="true" id="billingAddress" />
+							</div>
+							<div class="form-group">
+								<label>Copy Billing Address to Shipping Address: </label>
+								<form:checkbox class="form-control" id="shippingIsSame"
+									path="sameAsShipping" />
+							</div>
+							<div class="form-group">
+								<label>Shipping Address: </label>
+								<form:input id="shippingaddress" type="text"
+									path="shippingaddress" class="form-control" />
+								<c:forEach
+									items="${flowRequestContext.messageContext.getMessagesBySource('shippingaddress')}"
+									var="err">
+									<div>
+										<span>${err.text}</span>
+									</div>
+								</c:forEach>
+								<br />
+							</div>
+							<input type="submit" name="_eventId_submit"
+								class="btn btn-default" role="button" value="Submit" />
 						</div>
 					</div>
 
 				</div>
 			</div>
 	</form:form>
+
+
+	<script>
+		$(function() {
+
+			$('#shippingIsSame').change(
+					function() {
+
+						if (this.checked) {
+							// setting the value fo billing address
+							$('#shippingaddress').val(
+									$('#billingAddress').val()).prop(
+									'disabled', true);
+
+						} else {
+
+							$('#shippingaddress').prop('disabled', false).val(
+									'');
+
+						}
+
+					})
+
+		})
+	</script>
+
+
+
 </body>
 </html>

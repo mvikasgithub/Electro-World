@@ -14,6 +14,7 @@
 	<!-- if not specified the first view state is the starting state -->
 	<view-state id="start" view="checkout" model="flowScope.order">
 		<transition on="submit" to="validate" />
+		
 	</view-state>
 
 	<action-state id="validate">
@@ -24,20 +25,19 @@
 
 	<view-state id="confirmOrderDetails" view="confirmorder"
 		model="flowScope.order">
-		<transition on="cancel" to="gotoHome" />
+		<transition on="edit" to="start" />
 		<transition on="submit" to="proceedToPaymentDetails" />
 	</view-state>
 
-	<view-state id="proceedToPaymentDetails" view="paymentdetails"
-		model="flowScope.order">
+	<view-state id="proceedToPaymentDetails" view="paymentdetails"	model="flowScope.order">
 		<transition on="cancel" to="gotoHome" />
-		<transition on="submit" to="saveorder" />
+		<transition on="submit" to="saveOrder" />
 	</view-state>
 
 	<action-state id="saveOrder">
-		<evaluate expression="checkoutHandler.addOrderSuccess()"></evaluate>
+		<evaluate expression="checkoutHandler.addOrderSuccess(order)"></evaluate>
 		<transition on="true" to="orderSuccess" />
-		<transition on="false" to="orderSuccess" />
+		<transition on="false" to="start" />
 	</action-state>
 
 

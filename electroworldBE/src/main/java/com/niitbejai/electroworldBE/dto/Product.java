@@ -43,7 +43,6 @@ public class Product implements Serializable
 	private String quantity;
 	@NotEmpty
 	private String suppliercode;
-	@NotEmpty
 	private String imageURL;
 	private boolean active = true;
 	private boolean inStock = false;
@@ -51,10 +50,8 @@ public class Product implements Serializable
 	private MultipartFile imagempfile;
 	@NotEmpty
 	private String name;
-	@NotEmpty
 	private String description;
-	@NotEmpty
-	private int Price;
+	private int price;
 	
 	/*
 	 * To strong function
@@ -65,7 +62,7 @@ public class Product implements Serializable
 		return "Product [id=" + id + ", code=" + code + ", categoryid=" + categoryid + ", quantity=" + quantity
 				+ ", suppliercode=" + suppliercode + ", imageURL=" + imageURL + ", active=" + active + ", inStock="
 				+ inStock + ", imagempfile=" + imagempfile + ", name=" + name + ", description=" + description
-				+ ", Price=" + Price + "]";
+				+ ", price=" + price + "]";
 	}
 
 	/*
@@ -162,11 +159,11 @@ public class Product implements Serializable
 	}
 
 	public int getPrice() {
-		return Price;
+		return price;
 	}
 
 	public void setPrice(int price) {
-		Price = price;
+		this.price = price;
 	}
 	
 	

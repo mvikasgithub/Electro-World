@@ -84,50 +84,129 @@
 									<label>First Name</label>
 									<form:input type="text" path="fname"
 										placeholder="Enter First Name Here.." class="form-control" />
+									<c:forEach
+										items="${flowRequestContext.messageContext.getMessagesBySource('fname')}"
+										var="err">
+										<div>
+											<span>${err.text}</span>
+										</div>
+									</c:forEach>
+									<br />
 								</div>
 								<div class="col-sm-6 form-group">
 									<label>Last Name</label>
 									<form:input type="text" path="sname"
 										placeholder="Enter Last Name Here.." class="form-control" />
+									<c:forEach
+										items="${flowRequestContext.messageContext.getMessagesBySource('sname')}"
+										var="err">
+										<div>
+											<span>${err.text}</span>
+										</div>
+									</c:forEach>
+									<br />
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Email Address (will be your username)</label>
 								<form:input type="text" path="email"
 									placeholder="Enter Email Address Here.." class="form-control" />
+								<c:forEach
+									items="${flowRequestContext.messageContext.getMessagesBySource('email')}"
+									var="err">
+									<div>
+										<span>${err.text}</span>
+									</div>
+								</c:forEach>
+								<br />
+
 							</div>
 							<div class="form-group">
 								<label>Password</label>
 								<form:input type="password" path="password"
 									placeholder="Enter password here..." class="form-control" />
+								<c:forEach
+									items="${flowRequestContext.messageContext.getMessagesBySource('password')}"
+									var="err">
+									<div>
+										<span>${err.text}</span>
+									</div>
+								</c:forEach>
+								<br />
+
 							</div>
 							<div class="form-group">
 								<label>Billing Address</label>
 								<form:textarea path="billingaddress"
 									placeholder="Enter Address Here.." rows="3"
 									class="form-control" />
+								<c:forEach
+									items="${flowRequestContext.messageContext.getMessagesBySource('billingaddress')}"
+									var="err">
+									<div>
+										<span>${err.text}</span>
+									</div>
+								</c:forEach>
+								<br />
+
 							</div>
 							<div class="row">
 								<div class="col-sm-4 form-group">
 									<label>City</label>
 									<form:input type="text" path="city"
 										placeholder="Enter City Name Here.." class="form-control" />
+									<c:forEach
+										items="${flowRequestContext.messageContext.getMessagesBySource('city')}"
+										var="err">
+										<div>
+											<span>${err.text}</span>
+										</div>
+									</c:forEach>
+									<br />
+
 								</div>
 								<div class="col-sm-4 form-group">
 									<label>State</label>
 									<form:input type="text" path="state"
 										placeholder="Enter State Name Here.." class="form-control" />
+									<c:forEach
+										items="${flowRequestContext.messageContext.getMessagesBySource('state')}"
+										var="err">
+										<div>
+											<span>${err.text}</span>
+										</div>
+									</c:forEach>
+									<br />
+
 								</div>
 								<div class="col-sm-4 form-group">
 									<label>Zip</label>
 									<form:input type="text" path="zip"
 										placeholder="Enter Zip Code Here.." class="form-control" />
+									<c:forEach
+										items="${flowRequestContext.messageContext.getMessagesBySource('zip')}"
+										var="err">
+										<div>
+											<span>${err.text}</span>
+										</div>
+									</c:forEach>
+									<br />
+
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Phone Number</label>
 								<form:input type="text" path="phoneno"
 									placeholder="Enter Phone Number Here.." class="form-control" />
+								<c:forEach
+									items="${flowRequestContext.messageContext.getMessagesBySource('phoneno')}"
+									var="err">
+									<div>
+										<span>${err.text}</span>
+									</div>
+								</c:forEach>
+								<br />
+
 							</div>
 							<div class="form-group">
 								<form:label path="role" for="role">Type of User:</form:label>

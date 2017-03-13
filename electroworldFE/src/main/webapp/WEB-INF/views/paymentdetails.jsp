@@ -130,9 +130,8 @@
 							placeholder="Security Code">
 					</div>
 				</div>
-				<input type="submit" name="_eventId_submit" class="btn btn-default"
-					role="button" value="Submit" />
-
+					<a href="${flowExecutionUrl}&_eventId_submit" class="btn btn-default">Confirm Payment</a>&#160
+					<a href="${contextRoot}&_eventId_cancel" class="btn btn-default">Cancel</a>
 			</fieldset>
 		</form>
 	</div>
