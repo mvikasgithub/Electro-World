@@ -144,6 +144,8 @@ public class CartController {
 		order.setBillingaddress(user.getBillingaddress());
 		order.setTotalitems(cart.getTotalitems());
 		order.setTotalvalue(cart.getTotalvalueofitems());
+		order.setProductId(productid);
+		
 		
 		return "redirect:/checkout"; // to kick start the webform
 	}

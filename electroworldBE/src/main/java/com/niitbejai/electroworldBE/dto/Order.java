@@ -37,7 +37,8 @@ public class Order implements Serializable
 
 	@Transient
 	private boolean sameAsShipping; 
-	
+	@Transient
+	private int productId;
 	
 	
 	
@@ -45,6 +46,12 @@ public class Order implements Serializable
 	 * Getters and Setters
 	 */
 	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
 	public boolean isSameAsShipping() {
 		return sameAsShipping;
 	}

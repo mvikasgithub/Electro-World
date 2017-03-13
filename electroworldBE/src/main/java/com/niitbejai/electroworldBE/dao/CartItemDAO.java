@@ -15,5 +15,6 @@ public interface CartItemDAO
 	boolean update(CartItem cartItem);
 	boolean delete(int id);	
 	public CartItem getCartByUserId(int userId); 
-	public CartItem getCartByUserIdAndProduct(int userId, int productId); 
+	public CartItem getCartByUserIdAndProduct(int userId, int productId);
+	public boolean deleteCartItemGivenCartItem(CartItem cartItem);
 }

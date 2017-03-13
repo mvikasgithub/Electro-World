@@ -2,6 +2,8 @@ package com.niitbejai.electroworldBE.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.niitbejai.electroworldBE.dto.Order;
 
 public interface OrderDAO 

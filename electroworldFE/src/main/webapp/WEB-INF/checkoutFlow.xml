@@ -30,14 +30,14 @@
 	</view-state>
 
 	<view-state id="proceedToPaymentDetails" view="paymentdetails"	model="flowScope.order">
-		<transition on="cancel" to="gotoHome" />
+		<transition on="success" to="gotoHome" />
 		<transition on="submit" to="saveOrder" />
 	</view-state>
 
 	<action-state id="saveOrder">
 		<evaluate expression="checkoutHandler.addOrderSuccess(order)"></evaluate>
-		<transition on="true" to="orderSuccess" />
-		<transition on="false" to="start" />
+		<transition on="success" to="orderSuccess" />
+		<transition on="failure" to="start" />
 	</action-state>
 
 

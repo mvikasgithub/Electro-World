@@ -7,6 +7,9 @@ import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Component;
 
+import com.niitbejai.electroworldBE.dao.CartItemDAO;
+import com.niitbejai.electroworldBE.dao.OrderDAO;
+import com.niitbejai.electroworldBE.dto.CartItem;
 import com.niitbejai.electroworldBE.dto.Order;
 
 @Component
@@ -15,8 +18,14 @@ public class CheckoutHandler
 	@Autowired
 	Order order;
 	
-	//@Autowired
-	//OrderDAO orderDAO;
+	@Autowired
+	OrderDAO orderDAO;
+	
+	@Autowired
+	CartItem cartItem;
+	
+	@Autowired
+	CartItemDAO cartItemDAO;
 	
 
 	public Order initFlow() 
@@ -45,9 +54,21 @@ public class CheckoutHandler
 	
 	public String addOrderSuccess(Order order)
 	{
-		//return orderDAO.add(order) ? "true" : "false";
+		String status = "success";
+		
+		// Add to Order table
+		if(!orderDAO.add(order))
+			return "failure";
+		
+		
+		// delete from cart
+		CartItem cartItem = cartItemDAO.getCartByUserIdAndProduct(order.getUserid(), order.getProductId());
+		if(!cartItemDAO.deleteCartItemGivenCartItem(cartItem))
+			return "failure";
+		
+	
+		return status;
 
-		return "true";
 	}
 
 }
