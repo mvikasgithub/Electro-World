@@ -15,7 +15,9 @@ $(function(){
 		           "mRender": function (data, type, row) { return '<a href="/electroworldFE/show/'+row.id+'/product" class="Image" title="Image"><img src="/electroworldFE/resources/images/'+row.code+'.jpg" height="50" width="100"/></a>'; }
 		        },
 		        { data: 'description' },
-		        { data: 'price' },
+		        { data: 'price' ,
+		        	"mRender": function (data, type, row) { return "&#8377; "+ data;}
+		        },
 		        {
 		            "mData": 'id',
 		            "bSortable": false,

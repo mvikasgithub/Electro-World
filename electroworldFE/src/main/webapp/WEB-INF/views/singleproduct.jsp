@@ -83,7 +83,7 @@
 
 			</div>
 			<div class="col-md-6">
-				<h4>Price: ${product.price}</h4>
+				<h4>Price: &#8377 ${product.price}</h4>
 				<h4>Code: ${product.code }</h4>
 				<h4>Supplier: ${product.suppliercode}</h4>
 				<h4>Description: ${product.description}</h4>
